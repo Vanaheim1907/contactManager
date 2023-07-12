@@ -17,6 +17,7 @@ public class EnterpriseManagerApplication {
 		ApplicationContext context = SpringApplication.run(EnterpriseManagerApplication.class, args);
 
 		ContactConsolController controller = context.getBean(ContactConsolController.class);
+		Contact contact = controller.createContact();
 		System.out.println(controller.getContactList().toString());
 
 	}

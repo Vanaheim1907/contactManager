@@ -29,15 +29,15 @@ public class ContactConsolController {
         contact.setLastname(scanner.nextLine());
         System.out.println("Quel est l'adresse?'");
         contact.setAddress(scanner.nextLine());
-        System.out.println("est-il freelance ?");
+        System.out.println("est-il freelance ?[oui/non]");
         switch (scanner.nextLine()) {
             case "oui":
-                contact.setFreelance(true);
+                contact.setFreelance("t");
                 System.out.println("Quel est son numéro de TVA");
                 contact.setTvaNumber(scanner.nextLine());
 
-            case "non": contact.setFreelance(false);
-            default: contact.setFreelance(false);
+            case "non": contact.setFreelance("f");
+            default: contact.setFreelance("f");
         }
         return contactService.createContact(contact);
     }

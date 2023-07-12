@@ -2,12 +2,14 @@ package com.brosteau.alexandre.enterpriseManager.entity;
 
 import java.util.List;
 
+
+
 public class Contact {
 
     private String address;
     private String lastname;
     private String firstName;
-    private boolean isFreelance;
+    private String isFreelance;
     private String tvaNumber;
 
 
@@ -21,7 +23,7 @@ public class Contact {
         this.firstName = firstName;
     }
 
-    public Contact(String address, String lastname, String firstName, boolean isFreelance, String tvaNumber) {
+    public Contact(String address, String lastname, String firstName, String isFreelance, String tvaNumber) {
         this.address = address;
         this.lastname = lastname;
         this.firstName = firstName;
@@ -58,11 +60,11 @@ public class Contact {
         this.firstName = firstName;
     }
 
-    public boolean isFreelance() {
+    public String isFreelance() {
         return isFreelance;
     }
 
-    public void setFreelance(boolean freelance) {
+    public void setFreelance(String freelance) {
         isFreelance = freelance;
     }
 
@@ -80,5 +82,17 @@ public class Contact {
 
     public void setContactId(long contactId) {
         this.contactId = contactId;
+    }
+
+    @Override
+    public String toString() {
+        String infoContact =
+                "Firstname : " + this.getFirstName() + "\n" +
+                "Lastname : " + this.getLastname()  + "\n" +
+                "Address :" + this.getAddress() + "\n" +
+                "Is freelance : " + this.isFreelance + "\n" +
+                "TVA number :" + this.getTvaNumber() + "\n";
+
+        return infoContact;
     }
 }
